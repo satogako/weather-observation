@@ -20,6 +20,21 @@ def get_city_data():
         city_name = data_str.lower().capitalize()
 
 
+def validate_data(value):
+    """
+    Inside the attempt, it checks whether the value is an empty string and 
+    whether the value consists entirely of letters. Raises ValueError if 
+    the value is an empty string and does not consist of letters. 
+    Throws an Exception when the library does not find the city.
+    """
+    try:
+     
+    except:
+        print(f'Invalid data: {e}, please try again.\n')
+        return False
+    
+
+
 def main():
     city = get_city_data()
     print(city)

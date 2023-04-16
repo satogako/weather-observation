@@ -19,6 +19,12 @@ def get_city_data():
         data_str = input("Enter your city here. Example: Dublin\n")
         city_name = data_str.lower().capitalize()
 
+        if validate_data(city_name):
+            print(f'You enter city: {city_name}')
+            break
+
+    return city_name
+
 
 def validate_data(value):
     """

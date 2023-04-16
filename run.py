@@ -34,14 +34,21 @@ def validate_data(value):
     Throws an Exception when the library does not find the city.
     """
     try:
-        if value == "":
-            raise ValueError(
-                "You did't enter any data"
+        if value.isalpha() != True:
+            if value == "":
+                raise ValueError(
+                    "You did't enter any data"
+                )
+            else:
+                raise ValueError(
+                    f'You should enter only letters, you provided {value}'
                 )
      
     except ValueError as e:
         print(f'Invalid data: {e}, please try again.\n')
         return False
+
+    return True 
     
 
 

@@ -43,9 +43,14 @@ def validate_data(value):
                 raise ValueError(
                     f'You should enter only letters, you provided {value}'
                 )
+
+        MGR.weather_at_place(value)
      
     except ValueError as e:
         print(f'Invalid data: {e}, please try again.\n')
+        return False
+    except Exception:
+        print(f'No city found or you made a mistake. Please try again, you provided {value}\n')
         return False
 
     return True 

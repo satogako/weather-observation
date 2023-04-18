@@ -1,6 +1,6 @@
 from pyowm import OWM
 from prettytable import PrettyTable
-
+import math
 
 OMW_KEY = OWM('6527f0e6cac68cd70fb43502cb0948d7')
 MGR = OMW_KEY.weather_manager()
@@ -54,12 +54,33 @@ def validate_data(value):
         return False
 
     return True 
-    
 
+
+def show_weather(city_name):
+    '''
+    '''
+    observation = MGR.weather_at_place(city_name)
+    obs_w = observation.weather
+    
+    temperature = math.floor(obs_w.temperature('celsius')['temp'])
+    wheather = obs_w.status
+    clouds_percentage = obs_w.clouds
+    rain_for_hour = obs_w.rain['1h'] if  obs_w.rain != {} else '--'
+    humidity = obs_w.humidity 
+    wind_speed_km = round(obs_w.wind ()['speed'] * 3600 / 1000, 1)
+    visibility = observation.weather.visibility() / 1000
+
+    data_collected = [
+        city_name, temperature, wheather, clouds_percentage, 
+        rain_for_hour, humidity, wind_speed_km, visibility
+    ]
+
+    print(data_collected)
+    
 
 def main():
     city = get_city_data()
-    print(city)
+    show_weather(city)
 
 
 print("Welcome to Weather Observation!")

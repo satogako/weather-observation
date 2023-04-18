@@ -4,6 +4,7 @@ import math
 
 OMW_KEY = OWM('6527f0e6cac68cd70fb43502cb0948d7')
 MGR = OMW_KEY.weather_manager()
+TABLE = PrettyTable()
 
 
 def get_city_data():
@@ -75,7 +76,12 @@ def show_weather(city_name):
         rain_for_hour, humidity, wind_speed_km, visibility
     ]
 
-    print(data_collected)
+    TABLE.field_names = [
+        'City', '\u00b0C', 'Weather', 'Clouds, %', 'Rain, mm/1h', 'HUM, %', 'Wind, km/h', 'Visib., km'
+    ]
+    TABLE.add_row(data_collected)
+
+    print(TABLE)
     
 
 def main():

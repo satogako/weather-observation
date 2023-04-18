@@ -100,7 +100,7 @@ def user_answer():
             elif choise == 'n':
                 return False
             else:
-                print(f'Invalid data: {choise}. You must enter y - Yes or n - NO, please try againe')
+                print(f'Invalid data: {choise}. You must enter: y - Yes or n - NO, please try againe')
 
     return True    
     
@@ -112,8 +112,10 @@ def main():
         city = get_city_data()
         show_weather(city)
 
+        if user_answer() == False:
+            break
 
 print("Welcome to Weather Observation!")
-#main()
+main()
 
 user_answer()

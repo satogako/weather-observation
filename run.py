@@ -38,7 +38,7 @@ def validate_data(value):
     Throws an Exception when the library does not find the city.
     """
     try:
-        if value.isalpha() != True:
+        if value.isalpha() is False:
             if value == "":
                 raise ValueError(
                     "You did't enter any data"
@@ -124,7 +124,7 @@ def main():
         city = get_city_data()
         show_weather(city)
 
-        if user_answer() == False:
+        if user_answer() is False:
             break
         elif x == 9:
             print('The maximum of cities for comparison has been reached!')

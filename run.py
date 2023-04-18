@@ -1,8 +1,12 @@
 from pyowm import OWM
 from prettytable import PrettyTable
 import math
+import json
 
-OMW_KEY = OWM('6527f0e6cac68cd70fb43502cb0948d7')
+with open('creds.json', 'r') as json_file:
+    file = json.load(json_file)['key']
+
+OMW_KEY = OWM(file)
 MGR = OMW_KEY.weather_manager()
 TABLE = PrettyTable()
 
@@ -21,7 +25,6 @@ def get_city_data():
         city_name = data_str.lower().capitalize()
 
         if validate_data(city_name):
-            print(f'You enter city: {city_name}')
             break
 
     return city_name
@@ -104,7 +107,7 @@ def user_answer():
             elif choise == 'n':
                 return False
             else:
-                print(f'Invalid data: {choise}. You must enter: y - Yes or n - NO, please try againe')
+                print(f'Invalid data: {choise}. You must enter: y - Yes or n - NO, please try againe.')
 
     return True    
     

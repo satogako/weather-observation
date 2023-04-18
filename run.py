@@ -15,7 +15,7 @@ def get_city_data():
     """
     Get the name of the city entered by the user.
     Run a while loop to collect a valid string of data from the user
-    through a terminal that must be a string. 
+    through a terminal that must be a string.
     The loop will repeatedly request the data until it is valid.
     """
     while True:
@@ -32,9 +32,9 @@ def get_city_data():
 
 def validate_data(value):
     """
-    Inside the attempt, it checks whether the value is an empty string and 
-    whether the value consists entirely of letters. Raises ValueError if 
-    the value is an empty string and does not consist of letters. 
+    Inside the attempt, it checks whether the value is an empty string and
+    whether the value consists entirely of letters. Raises ValueError if
+    the value is an empty string and does not consist of letters.
     Throws an Exception when the library does not find the city.
     """
     try:
@@ -49,15 +49,16 @@ def validate_data(value):
                 )
 
         MGR.weather_at_place(value)
-     
+
     except ValueError as e:
         print(f'Invalid data: {e}, please try again.\n')
         return False
     except Exception:
-        print(f'No city found or you made a mistake. Please try again, you provided {value}\n')
+        print('No city found or you made a mistake.')
+        print(f'Please try again, you provided {value}\n')
         return False
 
-    return True 
+    return True
 
 
 def show_weather(city_name):
@@ -67,22 +68,23 @@ def show_weather(city_name):
     '''
     observation = MGR.weather_at_place(city_name)
     obs_w = observation.weather
-    
+
     temperature = math.floor(obs_w.temperature('celsius')['temp'])
     wheather = obs_w.status
     clouds_percentage = obs_w.clouds
-    rain_for_hour = obs_w.rain['1h'] if  obs_w.rain != {} else '--'
-    humidity = obs_w.humidity 
-    wind_speed_km = round(obs_w.wind ()['speed'] * 3600 / 1000, 1)
+    rain_for_hour = obs_w.rain['1h'] if obs_w.rain != {} else '--'
+    humidity = obs_w.humidity
+    wind_speed_km = round(obs_w.wind()['speed'] * 3600 / 1000, 1)
     visibility = observation.weather.visibility() / 1000
 
     data_collected = [
-        city_name, temperature, wheather, clouds_percentage, 
+        city_name, temperature, wheather, clouds_percentage,
         rain_for_hour, humidity, wind_speed_km, visibility
     ]
 
     TABLE.field_names = [
-        'City', '\u00b0C', 'Weather', 'Clouds, %', 'Rain, mm/1h', 'HUM, %', 'Wind, km/h', 'Visib., km'
+        'City', '\u00b0C', 'Weather', 'Clouds, %',
+        'Rain, mm/1h', 'HUM, %', 'Wind, km/h', 'Visib., km'
     ]
     TABLE.add_row(data_collected)
 
@@ -91,26 +93,27 @@ def show_weather(city_name):
 
 def user_answer():
     '''
-    Gets the user's response : If YES, then stops the While loop and 
-    allows you to observe the weather in another city; If NO, it stops 
-    the program; If none of the above, it displays a message, and continues 
+    Gets the user's response : If YES, then stops the While loop and
+    allows you to observe the weather in another city; If NO, it stops
+    the program; If none of the above, it displays a message, and continues
     While until the user enters YES or NO.
     '''
     while True:
-            print()
-            print('Would you like to see the weather in another city?')
-            user_answer = input('Please enter: y - Yes or n - No\n')
-            choise = user_answer.lower()
-            
-            if choise == 'y':
-                break
-            elif choise == 'n':
-                return False
-            else:
-                print(f'Invalid data: {choise}. You must enter: y - Yes or n - NO, please try againe.')
+        print()
+        print('Would you like to see the weather in another city?')
+        user_answer = input('Please enter: y - Yes or n - No\n')
+        choise = user_answer.lower()
 
-    return True    
-    
+        if choise == 'y':
+            break
+        elif choise == 'n':
+            return False
+        else:
+            print(f'Invalid data: {choise}.')
+            print('You must enter: y - Yes or n - NO, please try againe.')
+
+    return True
+
 
 def main():
     '''
@@ -128,7 +131,7 @@ def main():
 
     print('Program is completed!')
 
+
 print("Welcome to Weather Observation!")
+
 main()
-
-

@@ -107,6 +107,8 @@ def user_answer():
 
 def main():
     '''
+    Run all program functions, loop for repeat program and if statment for
+    termination of the program
     '''
     for x in range(10):
         city = get_city_data()

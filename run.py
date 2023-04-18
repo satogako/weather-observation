@@ -88,6 +88,10 @@ def show_weather(city_name):
 
 def user_answer():
     '''
+    Gets the user's response : If YES, then stops the While loop and 
+    allows you to observe the weather in another city; If NO, it stops 
+    the program; If none of the above, it displays a message, and continues 
+    While until the user enters YES or NO.
     '''
     while True:
             print()

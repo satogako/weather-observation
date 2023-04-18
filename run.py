@@ -114,8 +114,12 @@ def main():
 
         if user_answer() == False:
             break
+        elif x == 9:
+            print('The maximum of cities for comparison has been reached!')
+
+    print('Program is completed!')
 
 print("Welcome to Weather Observation!")
 main()
 
-user_answer()
+

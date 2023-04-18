@@ -59,6 +59,8 @@ def validate_data(value):
 
 def show_weather(city_name):
     '''
+    The function gets the weather from the pyowm library, adds a list with the
+    obtained weather values and displays data in the form of a table.
     '''
     observation = MGR.weather_at_place(city_name)
     obs_w = observation.weather

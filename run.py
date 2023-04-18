@@ -84,6 +84,18 @@ def show_weather(city_name):
     TABLE.add_row(data_collected)
 
     print(TABLE)
+
+
+def user_answer():
+    '''
+    '''
+    while True:
+            print()
+            print('Would you like to see the weather in another city?')
+            user_answer = input('Please enter: y - Yes or n - No\n')
+            choise = user_answer.lower()
+            
+            
     
 
 def main():
@@ -95,4 +107,6 @@ def main():
 
 
 print("Welcome to Weather Observation!")
-main()
+#main()
+
+user_answer()

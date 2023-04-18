@@ -87,8 +87,11 @@ def show_weather(city_name):
     
 
 def main():
-    city = get_city_data()
-    show_weather(city)
+    '''
+    '''
+    for x in range(10):
+        city = get_city_data()
+        show_weather(city)
 
 
 print("Welcome to Weather Observation!")

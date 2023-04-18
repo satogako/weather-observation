@@ -95,7 +95,14 @@ def user_answer():
             user_answer = input('Please enter: y - Yes or n - No\n')
             choise = user_answer.lower()
             
-            
+            if choise == 'y':
+                break
+            elif choise == 'n':
+                return False
+            else:
+                print(f'Invalid data: {choise}. You must enter y - Yes or n - NO, please try againe')
+
+    return True    
     
 
 def main():

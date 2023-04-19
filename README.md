@@ -1,31 +1,36 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# WEATHER OBSERVATION
+---
 
-Welcome satogako,
+Weather Observation is a Python terminal program that runs on the Code Institute mock terminal on Heroku.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Users can view the weather in one city or in several at once.
+The program will be useful for people who travel and those who want to compare the weather with their city.
 
-## Reminders
+[Here is the live version of my project.](https://weather-observation.herokuapp.com/)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+![Responsive site.](assets/images/responsive_page.jpg)
 
-## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+## FEATURES
+---
+* EXISTING FUNCTIONS
+    - To see the weather in a city, you need to enter the name of the city.
+    The name of the city can be entered with both lowercase and uppercase letters.
+        ![Weather data from one city.](assets/images/one_city.jpg)
+    - The program allows you to see the following weather data:
+        + Temperature in degrees Celsius;
+        + Weather - the state of the sky: sun, clouds, raine.
+        + Clouds, % - the percentage of cloudiness in the sky is from 0 to 100%. Where 0 is it has no clouds and 100% is completely cloudy sky, sun isn't visible.
+        + Raine, mm/1h - This id how much raine fell in milimeters in one hour. If it shows -- it means that it has not rained in the last hour.
+        + HUM, %  - This is humidity, measured as a percentage.
+        + Wind, km/h  - wind speed in kilometers per hour.
+    - To see the weather in several cities at the same time: after requesting the application "Would you like to see the weather in another city?", answer the letter y - YES and enter the name of another city.
+        ![Screenshot of the question.](assets/images/question_y_n.jpg)
+    - The program allows you to see the weather of up to ten cities at the same time.
+        ![Screenshot of 10 cities.](assets/images/ten_cities.jpg)
+    - Input validation
+        + The program checks on an empty string.
+        + The program checks on numbers and special characters.
+        + The program checks on spaces.
+        + The program checks for input of the city name with an error.
+        + The program checks when requesting "Would you like to see the weather in another city?" a character other than y -YES or n - NO.

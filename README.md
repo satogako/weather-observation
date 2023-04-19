@@ -34,6 +34,15 @@ The program will be useful for people who travel and those who want to compare t
         + The program checks on spaces.
         + The program checks for input of the city name with an error.
         + The program checks when requesting "Would you like to see the weather in another city?" a character other than y -YES or n - NO.
+        
+* FUTURE FEATURES
+    - Add a five-day weather forecast
+    - Add air quality index
+    - Add hourly temperature forecast
+    - Add atmospheric air pressure
+    - Add the chance of rain
+    - Add wind direction
+    - Add sunrise and sunset times
 
 ## DATA MODEL
 ---

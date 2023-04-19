@@ -77,3 +77,20 @@ The program will be useful for people who travel and those who want to compare t
 * VALIDATOR TESTING
     - PEP8
         + No errors were returned from PEP8online.com
+
+## DEPLOYMENT
+---
+This project was deployed using Code Institute's mock terminal for Heroku.
+* Steps for deployment:
+    - Fork or clone this repository
+    - Create a new Heroku app
+    - Set the buildbacks to Python and NodeJs in that order
+    - Link the Heroku app to the repository
+    - Click on Deploy
+
+## Credits
+---
+* Code Institute for the deployment terminal.
+* I used the [PyOWM](https://pypi.org/project/pyowm/) library manual to get the weather data
+* To display the data in the form of a table, I used the [PrettyTable](https://pypi.org/project/prettytable/) library manual.
+* I used [Lucid APP](https://lucid.app/users/login#/login) to plan the logical sequence of the application 

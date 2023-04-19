@@ -34,3 +34,46 @@ The program will be useful for people who travel and those who want to compare t
         + The program checks on spaces.
         + The program checks for input of the city name with an error.
         + The program checks when requesting "Would you like to see the weather in another city?" a character other than y -YES or n - NO.
+
+## DATA MODEL
+---
+* Logical structure of WEATHER OBSERVATION:
+
+    ![Logical structure of WEATHER OBSERVATION.](assets/images/Structure_of_WO.jpg)
+
+* To create the program, I decided to use object-oriented programming and used functions, loops, try statement and if else statement.
+
+* First, the program greets the user and asks to enter the name of the city.
+
+* The city value entered by the user will be checked for correctness. If the value is not correct, it will indicate a problem and ask to enter again.
+
+* The value is then sent to a function that receives weather data from the PyOWM library. Temperature data is rounded to the nearest whole number and wind speed is rounded to the tenth decimal place.
+
+* The data is written to a list and the PrettyTable library is used to display the weather data in tabular form.
+
+* After that, another function will ask the user "Would you like to see the weather in another city?". The user must answer YES or NO.
+
+* The input method receives input values from the user and another function checks them to see if they are correct.
+
+* If the user selects YES, the program will start from the beginning. If NO, the program will end.
+
+* The program allows you to view the weather of up to ten cities at the same time, after which the program ends.
+
+## TESTING
+---
+| have manually tested this project by doing the following:
+
+* Passed the code through a PEP8 linter and confirmed there are no problems.
+    ![PEP8.](assets/images/pep8.jpg)
+* Given invalid inputs: numbers, empty strings, special characters, entering the name of the city with an error.
+* Tested in my local terminal and the Code Institute Heroku terminal.
+
+## BUGS
+---
+* SOLVED BUGS
+    - When I was writing the project, I got an error that the WHILE loop was constantly looping. This has already been fixed by adding the Break keyword where necessary.
+* REMAINING BUGS
+    - No bugs remaining.
+* VALIDATOR TESTING
+    - PEP8
+        + No errors were returned from PEP8online.com

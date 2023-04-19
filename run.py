@@ -75,16 +75,15 @@ def show_weather(city_name):
     rain_for_hour = obs_w.rain['1h'] if obs_w.rain != {} else '--'
     humidity = obs_w.humidity
     wind_speed_km = round(obs_w.wind()['speed'] * 3600 / 1000, 1)
-    visibility = observation.weather.visibility() / 1000
 
     data_collected = [
         city_name, temperature, wheather, clouds_percentage,
-        rain_for_hour, humidity, wind_speed_km, visibility
+        rain_for_hour, humidity, wind_speed_km
     ]
 
     TABLE.field_names = [
-        'City', '\u00b0C', 'Weather', 'Clouds, %',
-        'Rain, mm/1h', 'HUM, %', 'Wind, km/h', 'Visib., km'
+        'City', '\u00b0C', 'Weather', 'Clouds,%',
+        'Rain,mm/1h', 'HUM,%', 'Wind,km/h'
     ]
     TABLE.add_row(data_collected)
 

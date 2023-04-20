@@ -38,15 +38,18 @@ def validate_data(value):
     Throws an Exception when the library does not find the city.
     '''
     try:
-        if value.isalpha() is False:
-            if value == '':
-                raise ValueError(
-                    "You did't enter any data"
-                )
-            else:
-                raise ValueError(
-                    f'You should enter only letters, you provided {value}'
-                )
+        if value == '':
+            raise ValueError(
+                "You did't enter any data"
+            )
+        elif ' ' in value[0]:
+            raise ValueError(
+               "You did't enter any data"
+            )
+        elif value.isalpha() is False and ' ' not in value:
+            raise ValueError(
+                f'You should enter only letters, you provided {value}'
+            )
 
         MGR.weather_at_place(value)
 

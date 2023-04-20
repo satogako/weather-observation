@@ -70,7 +70,7 @@ The program will be useful for people who travel and those who want to compare t
 
 ## TESTING
 ---
-| have manually tested this project by doing the following:
+I have manually tested this project by doing the following:
 
 * Passed the code through a PEP8 linter and confirmed there are no problems.
     ![PEP8.](assets/images/pep8.jpg)

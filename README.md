@@ -21,7 +21,7 @@ The program will be useful for people who travel and those who want to compare t
         + Temperature in degrees Celsius;
         + Weather - the state of the sky: sun, clouds, raine.
         + Clouds, % - the percentage of cloudiness in the sky is from 0 to 100%. Where 0 is it has no clouds and 100% is completely cloudy sky, sun isn't visible.
-        + Raine, mm/1h - This id how much raine fell in milimeters in one hour. If it shows -- it means that it has not rained in the last hour.
+        + Raine, mm/h - This id how much raine fell in milimeters in one hour. If it shows -- it means that it has not rained in the last hour.
         + HUM, %  - This is humidity, measured as a percentage.
         + Wind, km/h  - wind speed in kilometers per hour.
     - To see the weather in several cities at the same time: after requesting the application "Would you like to see the weather in another city?", answer the letter y - YES and enter the name of another city.

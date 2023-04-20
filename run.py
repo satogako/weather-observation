@@ -86,7 +86,7 @@ def show_weather(city_name):
 
     TABLE.field_names = [
         'City', '\u00b0C', 'Weather', 'Clouds,%',
-        'Rain,mm/1h', 'HUM,%', 'Wind,km/h'
+        'Rain,mm/h', 'HUM,%', 'Wind,km/h'
     ]
     TABLE.add_row(data_collected)
 

@@ -1,9 +1,10 @@
 const socket = io();
 
 const term = new Terminal({
-    cols: 180,
+    cols: 150,
     rows: 30,
     scrollback: 1000,
+    convertEol: true,
 });
 term.open(document.getElementById('terminal'));
 term.focus();

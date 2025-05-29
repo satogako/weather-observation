@@ -3,9 +3,11 @@ import asyncio
 from flask import Flask, render_template
 from flask_socketio import SocketIO
 import threading
+import warnings
 
 app = Flask(__name__)
 socketio = SocketIO(app, async_mode='threading')
+warnings.filterwarnings("ignore", category=UserWarning, module="pyowm")
 
 process = None
 writer = None

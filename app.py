@@ -1,3 +1,4 @@
+import os
 import asyncio
 from flask import Flask, render_template
 from flask_socketio import SocketIO
@@ -53,5 +54,10 @@ def receive_input(data):
             print(f"[ERROR] Failed to write to process: {e}")
 
 
-if __name__ == '__main__':
-    socketio.run(app, debug=True)
+if __name__ == "__main__":
+    socketio.run(
+        app,
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000)),
+        allow_unsafe_werkzeug=True
+    )

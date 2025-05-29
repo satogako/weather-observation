@@ -2,6 +2,10 @@ from pyowm import OWM
 from prettytable import PrettyTable
 import math
 import json
+import sys
+
+
+sys.stdout.reconfigure(encoding='utf-8')
 
 with open('creds.json', 'r') as json_file:
     file = json.load(json_file)['key']
@@ -21,7 +25,9 @@ def get_city_data():
     while True:
         print('Type a city to see what the weathe is like')
 
-        data_str = input('Enter your city here. Example: Dublin\n')
+        print('Enter your city here. Example: Dublin', flush=True)
+        data_str = input()
+        print()
         city_name = data_str.lower().capitalize()
 
         if validate_data(city_name):
@@ -103,7 +109,9 @@ def user_answer():
     while True:
         print()
         print('Would you like to see the weather in another city?')
-        user_answer = input('Please enter: y - Yes or n - No\n')
+        print('Please enter: y - Yes or n - No', flush=True)
+        user_answer = input()
+        print()
         choise = user_answer.lower()
 
         if choise == 'y':

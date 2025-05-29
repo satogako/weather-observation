@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Terminal</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm/css/xterm.css">
+  <style>
+    body {
+        background: #f0f0f0;
+        font-family: monospace;
+        text-align: center;
+    }
+
+    #terminal {
+        width: 80%;
+        height: 400px;
+        margin: 20px auto;
+        border: 2px solid orange;
+    }
+
+    #button {
+        padding: 10px 20px;
+        background: orange;
+        color: white;
+        font-weight: bold;
+        border: none;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .xterm-viewport,
+    .xterm-screen {
+        padding: 10px !important;
+        text-align: left !important;
+    }
+</style>
+
+</head>
+<body>
+  <h2>Interactive Terminal</h2>
+  <button id="button" onclick="startApp()">Run Program</button>
+  <div id="terminal"></div>
+
+  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xterm/lib/xterm.js"></script>
+  <script src="/static/js/client.js"></script>
+</body>
+</html>

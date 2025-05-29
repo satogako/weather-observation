@@ -1,5 +1,9 @@
 const socket = io();
-const term = new Terminal({ scrollback: 1000 });
+const term = new Terminal({
+    cols: 120, 
+    rows: 30,
+    scrollback: 1000,
+});
 term.open(document.getElementById('terminal'));
 
 

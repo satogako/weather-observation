@@ -1,7 +1,7 @@
 const socket = io();
 
 const term = new Terminal({
-    cols: 150,
+    cols: 120,
     rows: 30,
     scrollback: 1000,
     convertEol: true,

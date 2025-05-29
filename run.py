@@ -1,8 +1,10 @@
-from pyowm import OWM
-from prettytable import PrettyTable
 import math
 import json
 import sys
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="pyowm")
+from pyowm import OWM
+from prettytable import PrettyTable
 
 
 sys.stdout.reconfigure(encoding='utf-8')
@@ -23,7 +25,7 @@ def get_city_data():
     The loop will repeatedly request the data until it is valid.
     """
     while True:
-        print('Type a city to see what the weathe is like')
+        print('Type a city to see what the weathe is like', flush=True)
 
         print('Enter your city here. Example: Dublin', flush=True)
         data_str = input()
@@ -108,7 +110,7 @@ def user_answer():
     '''
     while True:
         print()
-        print('Would you like to see the weather in another city?')
+        print('Would you like to see the weather in another city?', flush=True)
         print('Please enter: y - Yes or n - No', flush=True)
         user_answer = input()
         print()

@@ -5,3 +5,4 @@ PySocks==1.7.1
 flask
 flask-socketio
 eventlet
+setuptools>=65.5.1
